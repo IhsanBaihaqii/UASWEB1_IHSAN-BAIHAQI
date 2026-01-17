@@ -2,6 +2,11 @@
 include "koneksi.php";
 session_start();
 
+    if (isset($_SESSION['email'])) {
+        header("Location: dashboard.php");
+        exit();
+    }
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST["email"] ?? "";
     $password = $_POST["password"] ?? "";

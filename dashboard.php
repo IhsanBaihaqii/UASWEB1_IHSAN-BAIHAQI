@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+    if (!isset($_SESSION['email'])) {
+        header("Location: index.php");
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -89,7 +94,7 @@ session_start();
   <body>
     <div class="sidebar">
       <h2>Dashboard</h2>
-      <a href="#">Home</a>
+      <a href="?page=home">Home</a>
       <a href="?page=listproducts">List Produk</a>
       <a href="?page=customer">Customer</a>
       <a href="?page=transaksi">Transaksi</a>
