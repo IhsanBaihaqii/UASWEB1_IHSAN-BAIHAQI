@@ -10,6 +10,24 @@ if (!isset($_SESSION['barang'])) {
     $_SESSION['barang'] = [];
 }
 
+if (isset($_POST['tambah_barang'])) {
+    $id_barang = $_POST['id_barang'];
+    $qty = (int)$_POST['jumlah'];
+
+    foreach ($data_barang as $b) {
+        if ($b['id_barang'] == $id_barang) {
+            $_SESSION['barang'][$id_barang] = [
+                'id_barang' => $b['id_barang'],
+                'kode' => $b['kode_barang'],
+                'nama' => $b['nama_barang'],
+                'harga' => $b['harga'],
+                'qty' => $qty
+            ];
+            break;
+        }
+    }
+}
+
 $keranjang = $_SESSION['barang'];
 $grandtotal = 0;
 ?>
@@ -37,6 +55,16 @@ button {
 }
 button:hover {
     background-color: #1e8449;
+}
+.hapus{
+    background-color: #c0392b;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 4px 8px;
+}
+.hapus:hover {
+    background-color: #992d22;
 }
 table {
     width: 100%;
@@ -95,7 +123,7 @@ th {
     <td><?= number_format($k['harga']) ?></td>
     <td><?= $k['qty'] ?></td>
     <td><?= number_format($total) ?></td>
-    <td><a href="?hapus=<?= $k['id_barang'] ?>">Hapus</a></td>
+    <td><a href="pages/hapus-keranjang.php?hapus=<?= $k['id_barang'] ?>" class="hapus">Hapus</a></td>
 </tr>
 <?php endforeach ?>
 
