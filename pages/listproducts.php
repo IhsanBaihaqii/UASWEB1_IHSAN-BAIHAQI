@@ -84,7 +84,7 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_barang");
         <td>
           <a href="dashboard.php?page=edit&id=<?= $row['id_barang']; ?>" class="btn
           btn-edit">Edit</a>
-          <a href="dashboard.php?page=hapus&id=<?= $row['id_barang']; ?>"
+          <a href="dashboard.php?page=hapus-product&id=<?= $row['id_barang']; ?>"
             class="btn btn-hapus"
             onclick="return confirm('Yakin hapus data?')">
             Hapus
