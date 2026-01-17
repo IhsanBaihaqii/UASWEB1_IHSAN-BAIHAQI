@@ -102,6 +102,6 @@ input:focus {
             <input type="text" name="email" placeholder="" required>
         </div>
         <button type="submit" name="simpan" class="btn btn-tambah">Simpan</button>
-        <a href="dashboard.php?page=pelanggan" class="btn btn-hapus">Batal</a>
+        <a href="dashboard.php?page=customer" class="btn btn-hapus">Batal</a>
     </form>
 </div>
