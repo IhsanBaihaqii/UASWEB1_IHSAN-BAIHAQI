@@ -99,7 +99,7 @@ input:focus {
         </div>
         <div class="form-group">
             <label>Email</label>
-            <input type="text" name="email" placeholder="" required>
+            <input type="email" name="email" placeholder="" required>
         </div>
         <button type="submit" name="simpan" class="btn btn-tambah">Simpan</button>
         <a href="dashboard.php?page=customer" class="btn btn-hapus">Batal</a>
