@@ -93,7 +93,7 @@ session_start();
       <a href="?page=listproducts">List Produk</a>
       <a href="?page=customer">Customer</a>
       <a href="?page=transaksi">Transaksi</a>
-      <a href="#">Laporan</a>
+      <a href="?page=laporan">Laporan</a>
     </div>
     <div class="header">
       <div class="dropdown">
