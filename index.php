@@ -1,5 +1,6 @@
 <?php
 include "koneksi.php";
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST["email"] ?? "";
@@ -8,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if ($row = mysqli_fetch_assoc($result)) {
         if ($password == $row["password"]) {
             $_SESSION["email"] = $row["email"];
-            $_SESSION["password"] = $row["password"];
+            $_SESSION["name"] = $row["name"];
             $_SESSION["role"] = $row["role"];
             header("Location: dashboard.php");
             exit;
