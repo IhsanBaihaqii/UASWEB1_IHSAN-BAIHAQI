@@ -28,6 +28,12 @@ if (isset($_POST['tambah_barang'])) {
     }
 }
 
+if (isset($_GET['reset'])) {
+    $_SESSION['barang'] = [];
+    header("Location: ?page=transaksi");
+    exit;
+}
+
 $keranjang = $_SESSION['barang'];
 $grandtotal = 0;
 ?>
@@ -66,6 +72,19 @@ button:hover {
 .hapus:hover {
     background-color: #992d22;
 }
+
+.reset{
+    background-color: white;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.reset:hover {
+    background-color: #f0f0f0;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -143,7 +162,7 @@ th {
 </form>
 
 <br>
-<a href="?reset=1">Reset Keranjang</a>
+<a href="?page=transaksi&reset=1" class="reset">Reset Keranjang</a>
 <?php else: ?>
 <p>Keranjang kosong</p>
 <?php endif ?>
