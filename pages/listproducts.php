@@ -45,8 +45,8 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_barang");
   th,
   td {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
+    border: 1px solid #ddd;
+    text-align: left;
   }
 
   th {
