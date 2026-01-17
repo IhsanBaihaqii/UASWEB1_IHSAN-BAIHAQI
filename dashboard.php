@@ -38,7 +38,8 @@ session_start();
         padding: 12px 20px;
         text-decoration: none;
       }
-      .sidebar a:hover {
+      .sidebar a:hover,
+      .sidebar a.active {
         background: #34495e;
         border-left: 4px solid #3498db;
       }
@@ -131,6 +132,17 @@ session_start();
           document.getElementById("profileMenu").style.display = "none";
         }
       };
+
+      // active menu item
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = "<?php echo $page; ?>";
+        const menuItems = document.querySelectorAll(".sidebar a");
+        menuItems.forEach(item => {
+          if (item.getAttribute("href").includes(currentPage)) {
+            item.classList.add("active");
+          }
+        });
+      });
     </script>
   </body>
 </html>
