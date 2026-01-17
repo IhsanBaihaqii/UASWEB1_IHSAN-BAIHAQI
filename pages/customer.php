@@ -57,8 +57,8 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_customer");
   th,
   td {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
+    border: 1px solid #ddd;
+    text-align: left;
   }
 
   th {
@@ -75,6 +75,7 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_customer");
       <th>No</th>
       <th>Nama</th>
       <th>Alamat</th>
+      <th>No. HP</th>
       <th>Email</th>
       <th>Aksi</th>
     </tr>
@@ -86,6 +87,7 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_customer");
         <td><?= $no++; ?></td>
         <td><?= $row['nama']; ?></td>
         <td><?= $row['alamat']; ?></td>
+        <td><?= $row['no_hp']; ?></td>
         <td><?= $row['email']; ?></td>
         <td>
           <a href="dashboard.php?page=edit-customer&id=<?= $row['id_customer']; ?>" class="

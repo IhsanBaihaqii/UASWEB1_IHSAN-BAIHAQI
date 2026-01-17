@@ -7,6 +7,7 @@ if (isset($_POST['update'])) {
 UPDATE tbl_customer SET
 nama='$_POST[nama]',
 alamat='$_POST[alamat]',
+no_hp='$_POST[no_hp]',
 email='$_POST[email]'
 WHERE id_customer='$id'
 ");
@@ -67,6 +68,10 @@ $data = mysqli_fetch_assoc(
         <div class="form-group">
             <label>Alamat</label>
             <input type="text" name="alamat" value="<?= $data['alamat']; ?>" required>
+        </div>
+        <div class="form-group">
+            <label>No. HP</label>
+            <input type="text" name="no_hp" value="<?= $data['no_hp']; ?>" required>
         </div>
         <div class="form-group">
             <label>Email</label>

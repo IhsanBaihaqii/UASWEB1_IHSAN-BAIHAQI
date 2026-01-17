@@ -4,13 +4,14 @@ include 'koneksi.php';
 if (isset($_POST['simpan'])) {
     $nama   = $_POST['nama'];
     $alamat = $_POST['alamat'];
+    $no_hp  = $_POST['no_hp'];
     $email  = $_POST['email'];
 
     mysqli_query($conn, "
         INSERT INTO tbl_customer
-        (nama, alamat, email)
+        (nama, alamat, no_hp, email)
         VALUES
-        ('$nama', '$alamat', '$email')
+        ('$nama', '$alamat', '$no_hp', '$email')
     ");
 
     header("Location: dashboard.php?page=customer");
@@ -36,6 +37,7 @@ if (isset($_POST['simpan'])) {
 
 .form-group {
     margin-bottom: 15px;
+    text-align: left;
 }
 
 label {
@@ -91,15 +93,19 @@ input:focus {
     <form method="post">
         <div class="form-group">
             <label>Nama</label>
-            <input type="text" name="nama" placeholder="" required>
+            <input type="text" name="nama" placeholder="Masukkan nama" required>
         </div>
         <div class="form-group">
             <label>Alamat</label>
-            <input type="text" name="alamat" placeholder="" required>
+            <input type="text" name="alamat" placeholder="Masukkan alamat" required>
+        </div>
+        <div class="form-group">
+            <label>No. HP</label>
+            <input type="text" name="no_hp" placeholder="Masukkan no. HP" required>
         </div>
         <div class="form-group">
             <label>Email</label>
-            <input type="email" name="email" placeholder="" required>
+            <input type="email" name="email" placeholder="Masukkan email" required>
         </div>
         <button type="submit" name="simpan" class="btn btn-tambah">Simpan</button>
         <a href="dashboard.php?page=customer" class="btn btn-hapus">Batal</a>
